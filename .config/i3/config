@@ -1,0 +1,197 @@
+#   __  _ _______ __   _         ___ __  __  _ ___ _  ____
+#  /  \| / /_   _/  \ )/ __     / __/  \|  \| |  _| |/ ___\
+# | /\ |  <  | || /\ |  / _/   | / | /\ | \ | | |_| | / __
+# | \/ | \ \ | || \/ |  \ \    | \_| \/ | | \ |  _| | \_\ \
+#  \__/|_|\_\|_| \__/  /__/     \___\__/|_|\__|_| |_|\____|
+
+# i3 config file (v2), create by M. Oktoluqman
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# ---------- Basic Definition ---------- #
+set $mod Mod4
+set $term --no-startup-id urxvt
+set $shutdown systemctl poweroff
+set $reboot systemctl reboot
+set $suspend dm-tool lock & systemctl suspend
+
+# set variabled for resizing
+set $resizeFloat 20
+set $resizeTile 2
+
+# set size for focused border
+for_window [class="^.*"] border pixel 3
+
+# set gaps
+gaps inner 8
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 9
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# ---------- Basic i3 Stuff ---------- #
+# start a terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu
+bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+
+# power modes
+set $mode_power "[L]ogout | sus[P]end | [R]eboot | [S]hutdown"
+mode $mode_power {
+	bindsym l exec --no-startup-id exec i3-msg exit
+	bindsym p exec --no-startup-id exec $suspend, mode "default"
+	bindsym r exec --no-startup-id exec $reboot
+	bindsym s exec --no-startup-id exec $shutdown
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+p mode $mode_power
+
+# Start i3bar to display a workspace bar (plus the system information i3status)
+bar {
+	colors {
+		separator #000000
+	}
+		position top
+        status_command i3status
+}
+
+# ---------- Managing Windows ---------- #
+focus_wrapping no
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# resize with mod + alt
+bindsym $mod+Mod1+h resize shrink width	$resizeFloat px or $resizeTile ppt
+bindsym $mod+Mod1+j resize grow height $resizeFloat px or $resizeTile ppt
+bindsym $mod+Mod1+k resize shrink height $resizeFloat px or $resizeTile ppt
+bindsym $mod+Mod1+l resize grow width $resizeFloat px or $resizeTile ppt
+
+# resize gaps with mod + alt + shift
+bindsym $mod+Mod1+Shift+h gaps outer current minus 4
+bindsym $mod+Mod1+Shift+j gaps inner current plus 4
+bindsym $mod+Mod1+Shift+k gaps inner current minus 4
+bindsym $mod+Mod1+Shift+l gaps outer current plus 4
+bindsym $mod+Mod1+Shift+0 gaps inner current set 0; gaps outer current set 0
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9: media
+bindsym $mod+0 workspace 10: config
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9: media
+bindsym $mod+Shift+0 move container to workspace 10: config
+
+# change container layout (stacked and toggle split)
+bindsym $mod+s layout toggle split
+bindsym $mod+Shift+s layout stacking
+
+# enter fullscreen mode for the focused container and tabbed layout
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f layout tabbed
+
+# split toggle
+bindsym $mod+x split toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# reload the configuration file
+bindsym $mod+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# ---------- Media Keys Control ---------- #
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 4%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 4%- #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1 -time 0 -steps 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1 -time 0 -steps 1 # decrease screen brightness
+
+# ---------- Launch Applications ---------- #
+bindsym $mod+b			exec firefox
+bindsym $mod+Shift+b	exec chromium-browser
+
+bindsym $mod+c			exec $term -e vim .config/i3/config
+bindsym $mod+Shift+c	exec $term -e vim .vimrc
+
+bindsym $mod+t			exec $term -e htop
+bindsym $mod+Shift+t	exec atom
+
+bindsym $mod+v			exec pavucontrol
+bindsym $mod+Shift+v	exec vlc
+
+bindsym $mod+p			exec arandr
+bindsym $mod+m			exec pcmanfm
+
+bindsym Print			exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots'
+bindsym Shift+Print		exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/Screenshots'
+
+# ---------- Autostart Programs ---------- #
+exec --no-startup-id nm-applet						# wifi menu in the corner
+exec --no-startup-id syndaemon -d -k -t -i 0.8 -m 100 # disable touchpad when using keyboard
+exec --no-startup-id sunclient ClickFinger3=2		# tap 3 fingers on touchpad for middleclick
+exec --no-startup-id synclient TapButton3=2			# same as above
+exec --no-startup-id /home/dimas/bash/LightsOn.sh 300 # disable lock screen when fullscreen
+exec --no-startup-id feh --bg-center Pictures/wallpaper\ pacil\ blank.png # add wallpaper
+exec --no-startup-id redshift-gtk					# reduce blue light
+exec --no-startup-id xfce4-power-manager			# battery manager
+#exec --no-startup-id light-locker --lock-on-suspend	# locks the screen after suspend
+exec --no-startup-id dropbox start					# start dropbox daemon
+exec --no-startup-id volumeicon						# show volume icon in tray
+exec --no-startup-id xset r rate 400				# hold key repeat rate

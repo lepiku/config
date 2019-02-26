@@ -1,0 +1,23 @@
+! default queries
+*customization:			-color
+
+! colors
+URxvt.background:		#1B1C1F
+URxvt.foreground:		#FFFFFF
+URxvt.color12:			#4444FF
+
+! fonts
+URxvt.font:				xft:monospace:pixelsize=12:Regular:antialias=true
+URxvt.boldFont:			xft:monospace:pixelsize=12:Bold:antialias=true
+URxvt.italicFont:		xft:monospace:pixelsize=12:Italic:antialias=true
+URxvt.boldItalicFont:	xft:monospace:pixelsize=12:Bold:Italic:antialias=true
+
+! other
+URxvt.termName:			rxvt-256color
+URxvt.scrollBar:		false
+URxvt.inheritPixmap:	true
+URxvt.transparent:		true
+URxvt.shading:			25
+
+! merge with:	xrdb -merge .Xresources
+! delete with:	xrdb -remove
