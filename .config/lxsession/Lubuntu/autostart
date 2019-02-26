@@ -1,0 +1,3 @@
+syndaemon -d -k -t -i 0.8 -m 100
+/home/dimas/bash/LightsOn.sh 300
+

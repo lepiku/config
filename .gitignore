@@ -12,7 +12,13 @@
 !.Xresources
 
 !.config/
+
 !.config/i3/
 !.config/i3/config
 !.config/i3status/
 !.config/i3status/config
+
+!.config/lxsession/
+!.config/openbox/
+!.config/lxsession/**
+!.config/openbox/**
