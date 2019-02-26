@@ -1,0 +1,8 @@
+*
+!.gitignore
+
+!.vimrc
+!.bashrc
+!.profile
+!.config/
+!.config/*
