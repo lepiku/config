@@ -4,5 +4,5 @@
 !.vimrc
 !.bashrc
 !.profile
-!.config/
-!.config/*
+!.config/i3/*
+!.config/i3status/*
