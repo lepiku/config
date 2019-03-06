@@ -18,6 +18,7 @@ URxvt.scrollBar:		false
 URxvt.inheritPixmap:	true
 URxvt.transparent:		true
 URxvt.shading:			25
+URxvt.saveLines:		5000
 
 ! merge with:	xrdb -merge .Xresources
 ! delete with:	xrdb -remove

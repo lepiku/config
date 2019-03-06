@@ -9,8 +9,7 @@ syntax enable
 set number
 
 " set tabs to have 4 spaces
-set ts=4
-set sts=4
+set sw=4 ts=4 sts=4
 
 " indent when moving to the next line while writing code
 set autoindent
@@ -84,10 +83,7 @@ function! PythonConfig()
 	" run python with F5
 	map <F5> :w<CR>:!clear;python3 '%'<CR>
 	map <A-F5> :w<CR>:!clear;python3 -i '%'<CR>
-	map <A><Esc><F5> :w<CR>:!clear;python3 -i '%'<CR>
-	set ts=4 sts=4 sw=4
-	set autoindent
-	set noexpandtab
+	map <Esc><F5> :w<CR>:!clear;python3 -i '%'<CR>
 endfunction
 
 function! JavaConfig()
@@ -103,6 +99,9 @@ endfunction
 augroup extension
 	autocmd BufRead,BufNewFile *.py call PythonConfig()
 	autocmd BufRead,BufNewFile *.java call JavaConfig()
-	autocmd BufRead,BufNewFile *.html,*.js call HtmlConfig()
-	autocmd BufRead,BufNewFile *.css call HtmlConfig()
+	autocmd BufRead,BufNewFile *.html,*.js,*.css call HtmlConfig()
 augroup end
+
+" save file
+map <S-z><S-a> :wa<CR>
+autocmd BufWritePost .vimrc source ~/.vimrc

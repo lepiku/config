@@ -156,6 +156,27 @@ export django_SECRET_KEY_1='7Z!2ff)&+=-wf9=kc^+po$c1#)a6r^hh0w#k6cosd81x#-1@zl9'
 export SECRET_KEY='!vvs2qy%@p1#9xyq1w=k@2_xxsv%(71mmzd1=2$p8rqhwz$)t)'
 export ALLOWED_HOSTS='127.0.0.1'
 
+# kawung functions
+alias kawung='ssh muhammad.oktoluqman@kawung.cs.ui.ac.id'
+# kawung mount with sshfs
+kawung-mount() {
+	if [ ! "$(ls -A ~/kawung)" ]; then
+		sshfs muhammad.oktoluqman@kawung.cs.ui.ac.id:/home/fasilkom/mahasiswa/m/muhammad.oktoluqman/ ~/kawung/
+	else
+		echo "kawung: already mounted"
+	fi
+
+	cd ~/kawung/
+}
+# kawung unmount with fusermount
+kawung-unmount() {
+	if [ "$(ls -A ~/kawung)" ]; then
+		fusermount -u ~/kawung/
+	else
+		echo "kawung: is not mounted"
+	fi
+}
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dimas/.sdkman"
 [[ -s "/home/dimas/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dimas/.sdkman/bin/sdkman-init.sh"
