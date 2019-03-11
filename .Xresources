@@ -19,6 +19,8 @@ URxvt.inheritPixmap:	true
 URxvt.transparent:		true
 URxvt.shading:			25
 URxvt.saveLines:		5000
+URxvt.iso14755:			false
+URxvt.iso14655_52:		false
 
 ! merge with:	xrdb -merge .Xresources
 ! delete with:	xrdb -remove

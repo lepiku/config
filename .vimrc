@@ -101,6 +101,12 @@ vnoremap < <gv
 map <S-z><S-a> :wa<CR>
 map <C-q> :q<CR>
 
+" split binding
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " ------------ Config for filetypes -------------- "
 function! PythonConfig()
 	" run python with F5
