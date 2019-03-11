@@ -70,14 +70,10 @@ function! RmSpaceC()
 	call winrestview(l:save)
 endfunction
 
-" autocomplete curly-braces
-inoremap {<CR> {<CR>}<Esc>ko<Tab>
-
 " ignore autocomplete *.class files
 set wildignore=*.class
 
-" save file
-map <S-z><S-a> :wa<CR>
+" auto reload vimrc
 autocmd BufWritePost .vimrc source ~/.vimrc
 
 " NERDTree plugin
@@ -93,7 +89,19 @@ map <C-z> :FZF<CR>
 " mouse cursor
 set mouse=a
 
-" ------------ Config for filetypes --------------
+" ------------ Remaped keys ---------------------- "
+" autocomplete curly-braces
+inoremap {<CR> {<CR>}<Esc>ko<Tab>
+
+" change indent in visual mode
+vnoremap > >gv
+vnoremap < <gv
+
+" file binding
+map <S-z><S-a> :wa<CR>
+map <C-q> :q<CR>
+
+" ------------ Config for filetypes -------------- "
 function! PythonConfig()
 	" run python with F5
 	map <F5> :w<CR>:!clear;python3 '%'<CR>
