@@ -76,6 +76,17 @@ set wildignore=*.class
 " auto reload vimrc
 autocmd BufWritePost .vimrc source ~/.vimrc
 
+" gitgutter plugin
+highlight GitGutterAdd		cterm=bold ctermfg=10
+highlight GitGutterDelete	cterm=bold ctermfg=9
+highlight GitGutterChange	cterm=bold ctermfg=11
+highlight GitGutterText		cterm=bold ctermfg=10
+
+highlight DiffAdd		cterm=NONE ctermfg=10 ctermbg=17
+highlight DiffDelete	cterm=NONE ctermfg=9 ctermbg=17
+highlight DiffChange	cterm=NONE ctermfg=11 ctermbg=17
+highlight DiffText		cterm=NONE ctermfg=10 ctermbg=88
+
 " NERDTree plugin
 map <C-n> :NERDTreeToggle<CR>
 
