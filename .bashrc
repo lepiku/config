@@ -189,9 +189,9 @@ stty -ixon
 
 # fzf plugin settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='find -maxdepth 10 -type f 2> /dev/null'
-export FZF_CTRL_T_COMMAND='find -maxdepth 10 -type f 2> /dev/null'
-export FZF_ALT_C_COMMAND='find -maxdepth 10 -type d 2> /dev/null'
+export FZF_DEFAULT_COMMAND='find -maxdepth 8 -type f 2> /dev/null'
+export FZF_CTRL_T_COMMAND='find -maxdepth 8 -type f 2> /dev/null'
+export FZF_ALT_C_COMMAND='find -maxdepth 8 -type d 2> /dev/null'
 
 # alias for home navigation
 alias ~='cd ~'
