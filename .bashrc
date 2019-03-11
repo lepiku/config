@@ -187,4 +187,10 @@ alias update='sudo apt update && sudo apt upgrade'
 # so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
+# fzf function
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# alias for home navigation
+alias ~='cd ~'
+alias ..='cd ..'
+
