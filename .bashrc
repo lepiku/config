@@ -135,6 +135,10 @@ unset __conda_setup
 # <<< conda init <<<
 conda activate std
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/dimas/.sdkman"
+[[ -s "/home/dimas/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dimas/.sdkman/bin/sdkman-init.sh"
+
 # add snap applications to terminal
 PATH="/snap/bin:$PATH"
 
@@ -177,6 +181,10 @@ kawung-unmount() {
 	fi
 }
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/dimas/.sdkman"
-[[ -s "/home/dimas/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dimas/.sdkman/bin/sdkman-init.sh"
+# alias for update ubuntu
+alias update='sudo apt update && sudo apt upgrade'
+
+# so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+stty -ixon
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

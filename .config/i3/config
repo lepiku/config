@@ -178,6 +178,7 @@ bindsym $mod+Shift+v	exec vlc
 
 bindsym $mod+p			exec arandr
 bindsym $mod+m			exec pcmanfm
+bindsym $mod+e			exec eclipse
 
 bindsym Print			exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots'
 bindsym Shift+Print		exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/Screenshots'
@@ -192,5 +193,5 @@ exec --no-startup-id feh --bg-center Pictures/wallpaper\ pacil\ blank.png # add 
 exec --no-startup-id redshift-gtk					# reduce blue light
 exec --no-startup-id xfce4-power-manager			# battery manager
 exec --no-startup-id dropbox start					# start dropbox daemon
-exec --no-startup-id volumeicon						# show volume icon in tray
+#exec --no-startup-id volumeicon						# show volume icon in tray
 exec --no-startup-id xset r rate 400				# hold key repeat rate
