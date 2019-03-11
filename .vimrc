@@ -76,6 +76,24 @@ inoremap {<CR> {<CR>}<Esc>ko<Tab>
 " ignore autocomplete *.class files
 set wildignore=*.class
 
+" save file
+map <S-z><S-a> :wa<CR>
+autocmd BufWritePost .vimrc source ~/.vimrc
+
+" NERDTree plugin
+map <C-n> :NERDTreeToggle<CR>
+
+" pathogen.vim plugin
+execute pathogen#infect()
+
+" fzf plugin
+set rtp+=~/.fzf
+map <C-z> :FZF<CR>
+
+" mouse cursor
+set mouse=a
+
+" ------------ Config for filetypes --------------
 function! PythonConfig()
 	" run python with F5
 	map <F5> :w<CR>:!clear;python3 '%'<CR>
@@ -99,10 +117,3 @@ augroup extension
 	autocmd BufRead,BufNewFile *.java call JavaConfig()
 	autocmd BufRead,BufNewFile *.html,*.js,*.css call HtmlConfig()
 augroup end
-
-" save file
-map <S-z><S-a> :wa<CR>
-autocmd BufWritePost .vimrc source ~/.vimrc
-
-" pathogen.vim
-execute pathogen#infect()
