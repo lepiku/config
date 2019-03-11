@@ -1,5 +1,5 @@
 " autocomplete with Ctrl+x and Ctrl+o
-filetype plugin on
+filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 
 " enable syntax highlighting
@@ -9,16 +9,13 @@ syntax enable
 set number
 
 " set tabs to have 4 spaces
-set sw=4 ts=4 sts=4
+set sw=4 ts=4 sts=4 noexpandtab
 
 " indent when moving to the next line while writing code
 set autoindent
 
 " expand tabs into spaces
 set noexpandtab
-
-" when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=4
 
 " show the matching part of the pair for [] {} and ()
 set showmatch
@@ -84,6 +81,7 @@ function! PythonConfig()
 	map <F5> :w<CR>:!clear;python3 '%'<CR>
 	map <A-F5> :w<CR>:!clear;python3 -i '%'<CR>
 	map <Esc><F5> :w<CR>:!clear;python3 -i '%'<CR>
+	setlocal sw=4 ts=4 sts=4 noexpandtab
 endfunction
 
 function! JavaConfig()
@@ -105,3 +103,6 @@ augroup end
 " save file
 map <S-z><S-a> :wa<CR>
 autocmd BufWritePost .vimrc source ~/.vimrc
+
+" pathogen.vim
+execute pathogen#infect()
