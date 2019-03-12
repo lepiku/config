@@ -76,7 +76,11 @@ set wildignore=*.class
 " auto reload vimrc
 autocmd BufWritePost .vimrc source ~/.vimrc
 
+" navigate with mouse
+set mouse=a
+
 " gitgutter plugin
+set updatetime=200
 highlight GitGutterAdd		cterm=bold ctermfg=10
 highlight GitGutterDelete	cterm=bold ctermfg=9
 highlight GitGutterChange	cterm=bold ctermfg=11
@@ -97,9 +101,6 @@ execute pathogen#infect()
 set rtp+=~/.fzf
 map <C-z> :FZF<CR>
 
-" mouse cursor
-set mouse=a
-
 " ------------ Remaped keys ---------------------- "
 " autocomplete curly-braces
 inoremap {<CR> {<CR>}<Esc>ko<Tab>
@@ -117,6 +118,11 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <C-Left>	:vertical:resize -1<CR>
+map <C-Down>	:resize +1<CR>
+map <C-Up>		:resize -1<CR>
+map <C-Right>	:vertical:resize +1<CR>
 
 " ------------ Config for filetypes -------------- "
 function! PythonConfig()
