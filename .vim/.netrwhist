@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/dimas/Dropbox/Django/itf'
-let g:netrw_dirhist_2='/home/dimas/Dropbox/Django/itf/home'
-let g:netrw_dirhist_3='/home/dimas/Dropbox/Django/itf'
-let g:netrw_dirhist_4='/home/dimas/Dropbox/Django'
-let g:netrw_dirhist_5='/home/dimas/Dropbox/Django/django-tutorial'
-let g:netrw_dirhist_6='/home/dimas/Dropbox/Django/django-tutorial/blog'
-let g:netrw_dirhist_7='/home/dimas/.vim'
-let g:netrw_dirhist_8='/home/dimas'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/var/log/journal/d8ed62d93e64403989ac790cba32e544'

@@ -73,11 +73,11 @@ endfunction
 " ignore autocomplete *.class files
 set wildignore=*.class
 
-" auto reload vimrc
-autocmd BufWritePost .vimrc source ~/.vimrc
-
 " navigate with mouse
 set mouse=a
+
+" so tmux knows
+set background=dark
 
 " gitgutter plugin
 set updatetime=200
@@ -101,9 +101,16 @@ execute pathogen#infect()
 set rtp+=~/.fzf
 map <C-z> :FZF<CR>
 
+" ale plugin
+let g:ale_sign_column_always = 1
+highlight error ctermbg=88
+highlight SpellBad ctermbg=88
+highlight todo ctermbg=100
+highlight SpellCap ctermbg=100
+
 " ------------ Remaped keys ---------------------- "
 " autocomplete curly-braces
-inoremap {<CR> {<CR>}<Esc>ko<Tab>
+"inoremap {<CR> {<CR>}<Esc>ko
 
 " change indent in visual mode
 vnoremap > >gv
@@ -111,7 +118,7 @@ vnoremap < <gv
 
 " file binding
 map <S-z><S-a> :wa<CR>
-map <C-q> :q<CR>
+noremap <C-q> :q<CR>
 
 " split binding
 map <C-h> <C-w>h
@@ -136,6 +143,7 @@ endfunction
 function! JavaConfig()
 	" run java with F5, don't forget to 'cd' to the file folder directory
 	map <F5> :w<CR>:!javac '%' && clear && java '%:r'<CR>
+	setlocal sw=4 ts=4 sts=4 noexpandtab
 endfunction
 
 function! HtmlConfig()
@@ -144,7 +152,17 @@ function! HtmlConfig()
 endfunction
 
 augroup extension
+	au!
 	autocmd BufRead,BufNewFile *.py call PythonConfig()
 	autocmd BufRead,BufNewFile *.java call JavaConfig()
 	autocmd BufRead,BufNewFile *.html,*.js,*.css call HtmlConfig()
 augroup end
+
+augroup postWrite
+	au!
+	" auto reload vimrc
+	autocmd BufWritePost .vimrc source ~/.vimrc
+	" groff pdf
+	autocmd BufWritePost *.me !groff -Tps -me '%' > '%:r.pdf'
+augroup end
+
