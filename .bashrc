@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=2000
+HISTFILESIZE=5000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -142,9 +142,6 @@ export SDKMAN_DIR="/home/dimas/.sdkman"
 # add snap applications to terminal
 PATH="/snap/bin:$PATH"
 
-# alias for remove to trash = rmtt
-alias rmtt="gio trash"
-
 # function to rename multiple files
 rename() {
 	for s in $1*
@@ -156,12 +153,6 @@ rename() {
 # django key
 export django_SECRET_KEY_1='7Z!2ff)&+=-wf9=kc^+po$c1#)a6r^hh0w#k6cosd81x#-1@zl9'
 
-# it-force settings
-export SECRET_KEY='!vvs2qy%@p1#9xyq1w=k@2_xxsv%(71mmzd1=2$p8rqhwz$)t)'
-export ALLOWED_HOSTS='127.0.0.1'
-
-# kawung functions
-alias kawung='ssh muhammad.oktoluqman@kawung.cs.ui.ac.id'
 # kawung mount with sshfs
 kawung-mount() {
 	if [ ! "$(ls -A ~/kawung)" ]; then
@@ -181,19 +172,14 @@ kawung-unmount() {
 	fi
 }
 
-# alias for update ubuntu
-alias update='sudo apt update && sudo apt upgrade'
-
 # so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
 # fzf plugin settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='find -maxdepth 8 -type f 2> /dev/null'
+export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -type f 2> /dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-export FZF_ALT_C_COMMAND='find -maxdepth 8 -type d 2> /dev/null'
+export FZF_ALT_C_COMMAND='find * -maxdepth 6 -type d 2> /dev/null'
 
-# alias for home navigation
-alias ~='cd ~'
-alias ..='cd ..'
-
+# show only 2 folder in bash
+export PROMPT_DIRTRIM=1
