@@ -1,12 +1,14 @@
-# configs
+# ignore all but these files
 *
 !.gitignore
 
 !.vim/
 !.vim/**
+.vim/bundle/
 !.vimrc
 
 !.bashrc
+!.bash_aliases
 !.profile
 !.Xresources
 
@@ -19,3 +21,5 @@
 !.config/lxsession/**
 !.config/openbox/
 !.config/openbox/**
+
+!.tmux.conf
