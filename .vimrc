@@ -48,8 +48,9 @@ set wildignore=*.class
 set mouse=a
 
 " ------------ Highlight/Color/Theme ------------- "
-"colorscheme default
+colorscheme default
 set background=dark
+highlight SignColumn ctermbg=NONE
 
 " 80 char border
 highlight colorcolumn ctermbg=235
@@ -82,10 +83,10 @@ highlight GitGutterChange	cterm=bold ctermfg=3
 highlight GitGutterText		cterm=bold ctermfg=5
 
 " vim-fugitive plugin
-highlight DiffAdd	cterm=NONE ctermbg=17
+highlight DiffAdd		cterm=NONE ctermbg=17
 highlight DiffDelete	cterm=NONE ctermbg=17 ctermfg=1
 highlight DiffChange	cterm=NONE ctermbg=17
-highlight DiffText	cterm=NONE ctermbg=52
+highlight DiffText		cterm=NONE ctermbg=52
 " for vim-code-dark
 "highlight DiffAdd		cterm=NONE ctermbg=17
 "highlight DiffDelete	cterm=NONE ctermbg=233 ctermfg=1
@@ -110,7 +111,6 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_symbols = {'space': ' ', 'paste': 'PASTE', 'maxlinenr': '',
 			\'notexists': 'Ɇ', 'crypt': '🔒', 'linenr': '', 'readonly': '',
 			\'spell': 'SPELL', 'modified': '+', 'keymap': 'Keymap: ',
@@ -150,6 +150,8 @@ noremap <C-n> :NERDTreeToggle<CR>
 nnoremap <Leader>j :ALENextWrap<CR>
 nnoremap <Leader>k :ALEPreviousWrap<CR>
 
+" reload vimrc
+nnoremap <Leader>rr :source ~/.vimrc<CR>
 " ------------ Config for filetypes -------------- "
 
 augroup extension

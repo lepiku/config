@@ -1,0 +1,26 @@
+Lepiku's Config
+===============
+
+## Introduction
+I use i3, URxvt, and vim in [Lubuntu](https://lubuntu.net/).
+I put my config files on Github so when someone asks for my config files, I can just share this repo's link.
+
+## Programs
+* [i3-gaps](https://github.com/Airblader/i3) - A Tiling window manager.
+* [rxvt-unicode](https://wiki.archlinux.org/index.php/Rxvt-unicode) - A terminal emulator
+* [vim](https://wiki.archlinux.org/index.php/Rxvt-unicode) - An awesome text editor
+
+## Vim Plugins
+* [NERDTree](https://github.com/scrooloose/nerdtree) - A tree explorer plugin
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Shows git diff
+* [fugitive.vim](https://github.com/tpope/vim-fugitive) - git wrapper inside Vim
+* [ale](https://github.com/w0rp/ale) - Checks syntax and semantics
+* [vim-airline](https://github.com/vim-airline/vim-airline) - Integrates plugins with status bar
+* [NERDCommenter](https://github.com/scrooloose/nerdcommenter) - A commenter plugin
+* [surround.vim](https://github.com/tpope/vim-surround) - tool for quoting/parenthesizing
+* [repeat.vim](https://github.com/tpope/vim-repeat) - Enables repeating for surround.vim
+* [auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
+* [closetag.vim](https://github.com/alvan/vim-closetag) - Auto close HTML tags
+* [vim-code-dark](https://github.com/tomasiser/vim-code-dark) - VSCode-like theme for vim
+* [semantic-highlight.vim](https://github.com/jaxbot/semantic-highlight.vim) - Colors different variable differently
+

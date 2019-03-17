@@ -1,6 +1,7 @@
 # ignore all but these files
 *
 !.gitignore
+!README.markdown
 
 !.vim/
 !.vim/**
