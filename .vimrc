@@ -1,7 +1,9 @@
 " enabla plugins and autoindent
 filetype plugin indent on
+set nocompatible
 set autoindent
 set omnifunc=syntaxcomplete#Complete
+set encoding=utf-8
 
 " enable syntax highlighting
 syntax enable
@@ -36,7 +38,8 @@ set ignorecase smartcase
 set number relativenumber
 
 " Enable autocomplete
-set wildmode=longest,list,full
+set wildmenu
+set wildmode=longest:list,full
 
 " Set new split below or right
 set splitbelow splitright
@@ -47,9 +50,15 @@ set wildignore=*.class
 " navigate with mouse
 set mouse=a
 
+" show special characters
+set list
+set listchars=tab:›\ ,eol:\ ,nbsp:␣,trail:•,extends:»,precedes:«
+set fillchars+=vert:│
+
 " ------------ Highlight/Color/Theme ------------- "
 colorscheme default
 set background=dark
+highlight Normal guibg=black guifg=white
 highlight SignColumn ctermbg=NONE
 
 " 80 char border
@@ -68,7 +77,16 @@ highlight Comment ctermfg=248
 " vim-code-dark
 "colorscheme codedark
 
+" YouCompleteMe highlights
+highlight Pmenu ctermbg=236 ctermfg=254
+highlight PmenuSel ctermbg=232 ctermfg=252
+
+highlight MatchParen ctermbg=24
+
 " ------------ Plugin Settings ------------------- "
+" ALE plugin settings
+let g:ale_completion_enabled = 1
+
 " pathogen.vim plugin
 execute pathogen#infect()
 
@@ -98,7 +116,6 @@ set rtp+=~/.fzf
 
 " ale plugin
 let g:ale_sign_column_always = 1
-let g:ale_completion_enabled = 1
 highlight error ctermbg=88
 highlight SpellBad ctermbg=88
 highlight todo ctermbg=100
@@ -144,7 +161,7 @@ noremap <C-Right>	:vertical:resize +1<CR>
 noremap <C-z> :FZF<CR>
 
 " NERDTree plugin
-noremap <C-n> :NERDTreeToggle<CR>
+noremap <Leader>n :NERDTreeToggle<CR>
 
 " ALE warp to next error
 nnoremap <Leader>j :ALENextWrap<CR>
