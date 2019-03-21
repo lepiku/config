@@ -8,7 +8,7 @@ I put my config files on Github so when someone asks for my config files, I can 
 ## Programs
 * [i3-gaps](https://github.com/Airblader/i3) - A Tiling window manager.
 * [rxvt-unicode](https://wiki.archlinux.org/index.php/Rxvt-unicode) - A terminal emulator
-* [vim](https://wiki.archlinux.org/index.php/Rxvt-unicode) - An awesome text editor
+* [vim](https://github.com/vim/vim) - An awesome text editor
 
 ## Vim Plugins
 * [NERDTree](https://github.com/scrooloose/nerdtree) - A tree explorer plugin
