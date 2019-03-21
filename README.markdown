@@ -1,9 +1,9 @@
-Lepiku's Config
+Lepiku's dotfiles
 ===============
 
 ## Introduction
 I use i3, URxvt, and vim in [Lubuntu](https://lubuntu.net/).
-I put my config files on Github so when someone asks for my config files, I can just share this repo's link.
+I put my dotfiles on Github so when someone asks for my files, I can just share this repo's link.
 
 ## Programs
 * [i3-gaps](https://github.com/Airblader/i3) - A Tiling window manager.
