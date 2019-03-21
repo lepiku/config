@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -127,7 +127,6 @@ else
 ##        CONDA_CHANGEPS1=false
         conda activate base
     else
-		echo "it exports it"
         \export PATH="/home/dimas/Programs/anaconda3/bin:$PATH"
     fi
 fi
@@ -144,10 +143,10 @@ PATH="/snap/bin:$PATH"
 
 # function to rename multiple files
 rename() {
-	for s in $1*
-	do
-		mv "$s" "${s/$1/$2}"
-	done
+    for s in $1*
+    do
+        mv "$s" "${s/$1/$2}"
+    done
 }
 
 # django key
@@ -155,21 +154,21 @@ export django_SECRET_KEY_1='7Z!2ff)&+=-wf9=kc^+po$c1#)a6r^hh0w#k6cosd81x#-1@zl9'
 
 # kawung mount with sshfs
 kawung-mount() {
-	if [ ! "$(ls -A ~/kawung)" ]; then
-		sshfs muhammad.oktoluqman@kawung.cs.ui.ac.id:/home/fasilkom/mahasiswa/m/muhammad.oktoluqman/ ~/kawung/
-	else
-		echo "kawung: already mounted"
-	fi
+    if [ ! "$(ls -A ~/kawung)" ]; then
+        sshfs muhammad.oktoluqman@kawung.cs.ui.ac.id:/home/fasilkom/mahasiswa/m/muhammad.oktoluqman/ ~/kawung/
+    else
+        echo "kawung: already mounted"
+    fi
 
-	cd ~/kawung/
+    cd ~/kawung/
 }
 # kawung unmount with fusermount
 kawung-unmount() {
-	if [ "$(ls -A ~/kawung)" ]; then
-		fusermount -u ~/kawung/
-	else
-		echo "kawung: is not mounted"
-	fi
+    if [ "$(ls -A ~/kawung)" ]; then
+        fusermount -u ~/kawung/
+    else
+        echo "kawung: is not mounted"
+    fi
 }
 
 # so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
@@ -177,9 +176,9 @@ stty -ixon
 
 # fzf plugin settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -type f 2> /dev/null'
+export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -type f 2> /dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-export FZF_ALT_C_COMMAND='find * -maxdepth 6 -type d 2> /dev/null'
+export FZF_ALT_C_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -type d 2> /dev/null'
 
 # show only 2 folder in bash
-export PROMPT_DIRTRIM=1
+export PROMPT_DIRTRIM=2
