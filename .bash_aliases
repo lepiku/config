@@ -9,5 +9,5 @@ alias rmtt="gio trash"
 alias kawung='ssh muhammad.oktoluqman@kawung.cs.ui.ac.id'
 
 # update ubuntu
-alias update='sudo apt update && sudo apt upgrade'
+alias update='sudo apt update && apt list -u && sudo apt upgrade'
 
