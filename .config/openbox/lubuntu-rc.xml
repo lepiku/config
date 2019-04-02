@@ -362,7 +362,7 @@
         # HalfLowerScreen
     -->
     <keybind key="W-Down">
-	  <!-- the default
+      <!-- the default
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -371,17 +371,17 @@
         <height>50%</height>
       </action>
 	  -->
-	  <action name="If">
-	    <query>
-		  <maximized>yes</maximized>
-		</query>
-		<then>
-		  <action name="UnmaximizeFull"/>
-		</then>
-		<else>
-		  <action name="Iconify"/>
-		</else>
-	  </action>
+      <action name="If">
+        <query>
+          <maximized>yes</maximized>
+        </query>
+        <then>
+          <action name="UnmaximizeFull"/>
+        </then>
+        <else>
+          <action name="Iconify"/>
+        </else>
+      </action>
     </keybind>
     <!-- Keybindings for running applications on Home + E -->
     <keybind key="W-e">
@@ -560,7 +560,7 @@
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
       </mousebind>
-	  <!-- Disable switching desktop with scroll wheel with Alt
+      <!-- Disable switching desktop with scroll wheel with Alt
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>

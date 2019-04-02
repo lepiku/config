@@ -1,0 +1,3 @@
+#!/bin/bash
+
+urxvt -e python3 /home/dimas/Programs/ranger/ranger.py

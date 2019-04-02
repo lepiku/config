@@ -24,3 +24,6 @@
 !.config/openbox/**
 
 !.tmux.conf
+
+!bin
+!bin/**

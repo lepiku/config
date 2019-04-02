@@ -1,0 +1,17 @@
+#! /bin/sh
+
+if [ $# -eq 1 ]; then
+    if [ $1 = "intel" ]; then
+        sudo cp /etc/X11/xorg.conf.backup /etc/X11/xorg.conf \
+            && sudo prime-select intel
+        echo "Please logout to apply the change"
+    elif [ $1 = "nvidia" ]; then
+        echo "" > /etc/X11/xorg.conf \
+            && sudo prime-select nvidia
+        echo "Please logout to apply the change"
+    else
+        echo "Please input: intel / nvidia"
+    fi
+else
+    echo "Please input exactly one argument: intel / nvidia"
+fi

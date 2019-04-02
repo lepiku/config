@@ -1,0 +1,7 @@
+#! /bin/sh
+
+if [ $(gpu-manager | grep "Is nvidia loaded? no" > /dev/null) ]; then
+	echo "you are using nvidia graphics"
+else
+	echo "you are using intel graphics"
+fi

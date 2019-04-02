@@ -1,0 +1,16 @@
+#! /bin/bash
+
+if [[ $# -eq 0 ]]; then
+    multiplier=1
+elif [[ $# -eq 1 && $1 = "-" ]]; then
+    multiplier=-1
+elif [[ $# -eq 1 && $1 =~ ^[+-]?+[0-9]+$ ]]; then
+    multiplier=$1
+else
+    echo "Wrong argument"
+    exit 1
+fi
+
+value=$(tr -cd 0-9 < /sys/class/backlight/intel_backlight/brightness)
+echo $(($value + 15 * $multiplier)) | sudo tee /sys/class/backlight/intel_backlight/brightness
+

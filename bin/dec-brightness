@@ -1,0 +1,3 @@
+#! /bin/sh
+
+inc-brightness -$1
