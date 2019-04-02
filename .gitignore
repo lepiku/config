@@ -22,6 +22,8 @@
 !.config/lxsession/**
 !.config/openbox/
 !.config/openbox/**
+!.config/ranger/
+!.config/ranger/**
 
 !.tmux.conf
 
