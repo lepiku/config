@@ -2,15 +2,17 @@
 *customization:			-color
 
 ! colors
-URxvt.background:		#1B1C1F
+!URxvt.background:		#1B1C1F
+URxvt.background:		#000000
 URxvt.foreground:		#FFFFFF
+URxvt.color4:			#000070
 URxvt.color12:			#4444FF
 
 ! fonts
-URxvt.font:				xft:SourceCodePro-SemiBold:pixelsize=15:Regular:antialias=true
-URxvt.italicFont:		xft:SourceCodePro-SemiBold:pixelsize=15:Italic:antialias=true
-URxvt.boldFont:			xft:SourceCodePro-Bold:pixelsize=15:Bold:antialias=true
-URxvt.boldItalicFont:	xft:SourceCodePro-Bold:pixelsize=15:Italic:antialias=true
+URxvt.font:				xft:SourceCodePro-SemiBold:pixelsize=14:Regular:antialias=true
+URxvt.italicFont:		xft:SourceCodePro-SemiBold:pixelsize=14:Italic:antialias=true
+URxvt.boldFont:			xft:SourceCodePro-Bold:pixelsize=14:Bold:antialias=true
+URxvt.boldItalicFont:	xft:SourceCodePro-Bold:pixelsize=14:Italic:antialias=true
 
 ! hotkey
 URxvt.keysym.Control-Up:	\033[1;5A
@@ -23,14 +25,13 @@ URxvt.keysym.C-S-underscore:font-size:decrease
 ! cursor
 URxvt.cursorColor:		#FFFFFF
 URxvt.cursorBlink:		1
-URxvt.cursorUnderline:	1
 
 ! other
 URxvt.termName:			rxvt-256color
 URxvt.scrollBar:		false
 URxvt.inheritPixmap:	true
 URxvt.transparent:		true
-URxvt.shading:			20
+URxvt.shading:			25
 URxvt.saveLines:		5000
 URxvt.iso14755:			false
 URxvt.iso14755_52:		false
