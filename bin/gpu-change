@@ -4,14 +4,14 @@ if [ $# -eq 1 ]; then
     if [ $1 = "intel" ]; then
         sudo cp /etc/X11/xorg.conf.backup /etc/X11/xorg.conf \
             && sudo prime-select intel
-        echo "Please logout to apply the change"
+        echo "Please logout to apply \e[96mthe change"
     elif [ $1 = "nvidia" ]; then
         echo "" > /etc/X11/xorg.conf \
             && sudo prime-select nvidia
-        echo "Please logout to apply the change"
+        echo "Please logout to apply \e[92mthe change"
     else
-        echo "Please input: intel / nvidia"
+        echo "Please input: \e[96mintel\e[39m / \e[92mnvidia"
     fi
 else
-    echo "Please input exactly one argument: intel / nvidia"
+    echo "Please input exactly one argument: \e[96mintel\e[39m / \e[92mnvidia"
 fi
