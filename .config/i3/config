@@ -175,14 +175,17 @@ bindsym $mod+Shift+b	exec chromium-browser
 bindsym $mod+c			exec $termbash "vim .vimrc"
 bindsym $mod+Shift+c	exec $termbash "vim .config/i3/config"
 
+bindsym $mod+g			exec steam
+bindsym $mod+Shift+g	exec discord
+
+bindsym $mod+m			exec $termbash "ranger"
+bindsym $mod+Shift+m	exec pcmanfm
+
 bindsym $mod+t			exec $term -e htop
 bindsym $mod+Shift+t	exec atom
 
 bindsym $mod+v			exec pavucontrol
 bindsym $mod+Shift+v	exec vlc
-
-bindsym $mod+m			exec $termbash "ranger"
-bindsym $mod+Shift+m	exec pcmanfm
 
 bindsym $mod+p			exec arandr
 bindsym $mod+e			exec eclipse
