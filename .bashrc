@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2000
-HISTFILESIZE=5000
+HISTSIZE=5000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -56,10 +56,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;38;5;214m\]\$(parse_git_branch)\[\033[00m\]\$ "
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[0;91m\] \$(parse_git_branch)\[\033[00m\]\$ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    #PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(parse_git_branch)\$ "
+    PS1="${debian_chroot:+($debian_chroot)}\w \$(parse_git_branch)\$ "
 fi
 unset color_prompt force_color_prompt
 
@@ -173,6 +179,8 @@ kawung-unmount() {
 
 # so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
+# enable vi mode, color settings in .inputrc
+set -o vi
 
 # fzf plugin settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

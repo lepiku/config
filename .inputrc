@@ -1,0 +1,4 @@
+# for vi mode
+set show-mode-in-prompt on
+set vi-ins-mode-string "\1\e[0;1;92m\2+\1\e[0m\2 "
+set vi-cmd-mode-string "\1\e[0;1;93m\2:\1\e[0m\2 "
