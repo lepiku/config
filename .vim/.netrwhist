@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/var/log/journal/d8ed62d93e64403989ac790cba32e544'
 let g:netrw_dirhist_2='/home/dimas'
 let g:netrw_dirhist_3='/home/dimas/.dropbox-dist'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/home/dimas'
 let g:netrw_dirhist_5='/home/dimas/compfest'
 let g:netrw_dirhist_6='/home/dimas/compfest/black-manta'
 let g:netrw_dirhist_7='/home/dimas'
+let g:netrw_dirhist_8='/home/dimas/Dropbox/Python/auto-etkd'

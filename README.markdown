@@ -12,9 +12,11 @@ I put my dotfiles on Github so when someone asks for my files, I can just share 
 
 ## Vim Plugins
 * [NERDTree](https://github.com/scrooloose/nerdtree) - A tree explorer plugin
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git) - git integration with NERDTree
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Shows git diff
 * [fugitive.vim](https://github.com/tpope/vim-fugitive) - git wrapper inside Vim
 * [ale](https://github.com/w0rp/ale) - Checks syntax and semantics
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - A code-completion engine for vim
 * [vim-airline](https://github.com/vim-airline/vim-airline) - Integrates plugins with status bar
 * [NERDCommenter](https://github.com/scrooloose/nerdcommenter) - A commenter plugin
 * [surround.vim](https://github.com/tpope/vim-surround) - tool for quoting/parenthesizing
@@ -22,5 +24,5 @@ I put my dotfiles on Github so when someone asks for my files, I can just share 
 * [auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
 * [closetag.vim](https://github.com/alvan/vim-closetag) - Auto close HTML tags
 * [vim-code-dark](https://github.com/tomasiser/vim-code-dark) - VSCode-like theme for vim
-* [semantic-highlight.vim](https://github.com/jaxbot/semantic-highlight.vim) - Colors different variable differently
+* [vim-markdown](https://github.com/plasticboy/vim-markdown.git) - Plugin for markdown files
 

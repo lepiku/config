@@ -1,4 +1,4 @@
-" enabla plugins and autoindent
+" enable plugins and autoindent
 filetype plugin indent on
 set nocompatible
 set autoindent
@@ -52,9 +52,15 @@ set mouse=a
 
 " show special characters
 set list
-set listchars=tab:›\ ,eol:\ ,nbsp:␣,trail:•,extends:»,precedes:«
+set listchars=tab:›\ ,nbsp:␣,trail:•,extends:»,precedes:«
 set fillchars+=vert:│
 
+" highlight all search matches
+set hlsearch
+set incsearch
+
+" tell vim where to put swap files
+set dir=~/.swapdir
 " ------------ Highlight/Color/Theme ------------- "
 colorscheme default
 set background=dark
@@ -82,10 +88,18 @@ highlight Pmenu ctermbg=236 ctermfg=254
 highlight PmenuSel ctermbg=232 ctermfg=252
 
 highlight MatchParen ctermbg=24
+highlight Search ctermbg=239 ctermfg=NONE
+highlight Visual ctermbg=18
 
 " ------------ Plugin Settings ------------------- "
 " ALE plugin settings
-let g:ale_completion_enabled = 1
+"let g:ale_completion_enabled = 1
+let g:ale_linters = {
+			\ 'javascript': ['eslint'],
+			\}
+let g:ale_fixers = {
+			\ 'javascript': ['prettier', 'eslint'],
+			\}
 
 " pathogen.vim plugin
 execute pathogen#infect()
@@ -129,9 +143,9 @@ let g:airline_right_alt_sep = ''
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols = {'space': ' ', 'paste': 'PASTE', 'maxlinenr': '',
-			\'notexists': 'Ɇ', 'crypt': '🔒', 'linenr': '', 'readonly': '',
-			\'spell': 'SPELL', 'modified': '+', 'keymap': 'Keymap: ',
-			\'ellipsis': '...', 'branch': '', 'whitespace': '☲'}
+			\ 'notexists': 'Ɇ', 'crypt': '🔒', 'linenr': '', 'readonly': '',
+			\ 'spell': 'SPELL', 'modified': '+', 'keymap': 'Keymap: ',
+			\ 'ellipsis': '...', 'branch': '', 'whitespace': '☲'}
 
 " ------------ Mapping / Remaped keys ------------ "
 " change leader key
@@ -146,6 +160,9 @@ noremap <S-z><S-a> :wa<CR>
 noremap <C-q> :q<CR>
 
 " split binding
+noremap <C-S-h> gT
+noremap <C-S-l> gt
+
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
@@ -166,17 +183,23 @@ noremap <Leader>n :NERDTreeToggle<CR>
 " ALE warp to next error
 nnoremap <Leader>j :ALENextWrap<CR>
 nnoremap <Leader>k :ALEPreviousWrap<CR>
+" ALE Fixes
+nnoremap <Leader>trim :ALEFix trim_whitespace<CR>
+map <Leader>fix :ALEFix<CR>
 
 " reload vimrc
 nnoremap <Leader>rr :source ~/.vimrc<CR>
-" ------------ Config for filetypes -------------- "
 
+" hide search results
+map <Esc><Esc> :nohlsearch<CR>
+
+" ------------ Config for filetypes -------------- "
 augroup extension
 au!
 	" python force indentation
 	autocmd BufRead,BufNewFile *.py setlocal sw=4 ts=4 sts=4 noexpandtab
 	" html,jss force indentation
-	autocmd BufRead,BufNewFile *.html,*.js setlocal sw=2 ts=2 sts=2 expandtab
+	autocmd BufRead,BufNewFile *.html,*.js,*.jsx setlocal sw=2 ts=2 sts=2 expandtab
 augroup end
 
 augroup postWrite
