@@ -193,6 +193,10 @@ nnoremap <Leader>rr :source ~/.vimrc<CR>
 " hide search results
 map <Esc><Esc> :nohlsearch<CR>
 
+" vim fugitive
+map <Leader>gs :Gstatus<CR>
+map <Leader>gd :Gdiff<CR>
+
 " ------------ Config for filetypes -------------- "
 augroup extension
 au!

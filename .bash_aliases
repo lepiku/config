@@ -29,3 +29,6 @@ alias fzfall='find -maxdepth 6 -not -ipath "*compfest*" -type d 2> /dev/null | f
 
 # deactivate source
 alias deactivate='conda deactivate'
+
+# vim without YouCompleteMe with vi
+alias vi="vim --cmd \"let g:pathogen_disabled = ['YouCompleteMe']\""
