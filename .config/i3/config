@@ -182,7 +182,7 @@ bindsym $mod+m			exec $termbash "ranger"
 bindsym $mod+Shift+m	exec pcmanfm
 
 bindsym $mod+t			exec $term -e htop
-bindsym $mod+Shift+t	exec atom
+bindsym $mod+Shift+t	exec lxtask
 
 bindsym $mod+v			exec pavucontrol
 bindsym $mod+Shift+v	exec vlc

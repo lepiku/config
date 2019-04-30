@@ -30,9 +30,9 @@ URxvt.cursorBlink:		1
 ! other
 URxvt.termName:			rxvt-256color
 URxvt.scrollBar:		false
-!URxvt.inheritPixmap:	true
-!URxvt.transparent:		true
-!URxvt.shading:			25
+URxvt.inheritPixmap:	true
+URxvt.transparent:		true
+URxvt.shading:			25
 URxvt.saveLines:		5000
 URxvt.iso14755:			false
 URxvt.iso14755_52:		false
