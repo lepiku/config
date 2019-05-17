@@ -2,7 +2,6 @@
 filetype plugin indent on
 set nocompatible
 set autoindent
-set omnifunc=syntaxcomplete#Complete
 set encoding=utf-8
 
 " enable syntax highlighting
@@ -147,6 +146,9 @@ let g:airline_symbols = {'space': ' ', 'paste': 'PASTE', 'maxlinenr': '',
 			\ 'spell': 'SPELL', 'modified': '+', 'keymap': 'Keymap: ',
 			\ 'ellipsis': '...', 'branch': '', 'whitespace': '☲'}
 
+" NERDTree ignore
+let NERDTreeIgnore = ['\.pyc$', '\.class']
+
 " ------------ Mapping / Remaped keys ------------ "
 " change leader key
 let mapleader=","
@@ -201,7 +203,7 @@ map <Leader>gd :Gdiff<CR>
 augroup extension
 au!
 	" python force indentation
-	autocmd BufRead,BufNewFile *.py setlocal sw=4 ts=4 sts=4 noexpandtab
+	autocmd BufRead,BufNewFile *.py setlocal sw=4 ts=4 sts=4 expandtab
 	" html,jss force indentation
 	autocmd BufRead,BufNewFile *.html,*.js,*.jsx setlocal sw=2 ts=2 sts=2 expandtab
 augroup end

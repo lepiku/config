@@ -59,7 +59,8 @@ bindsym $mod+Shift+p mode $mode_power
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
 	colors {
-		separator #000000
+		background #222222
+		separator #222222
 	}
 	position top
 	status_command i3status
