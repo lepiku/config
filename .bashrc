@@ -121,23 +121,21 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# added by Anaconda3 5.3.0 installer
-# >>> conda init >>>
+
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/dimas/Programs/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$('/home/dimas/Programs/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
+    eval "$__conda_setup"
 else
     if [ -f "/home/dimas/Programs/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/home/dimas/Programs/anaconda3/etc/profile.d/conda.sh"
-##        CONDA_CHANGEPS1=false
-        conda activate base
     else
-        \export PATH="/home/dimas/Programs/anaconda3/bin:$PATH"
+        export PATH="/home/dimas/Programs/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda init <<<
+# <<< conda initialize <<<
 conda activate std
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -156,7 +154,8 @@ rename() {
 }
 
 # django key
-export django_SECRET_KEY_1='7Z!2ff)&+=-wf9=kc^+po$c1#)a6r^hh0w#k6cosd81x#-1@zl9'
+export django_KEY_1='7Z!2ff)&+=-wf9=kc^+po$c1#)a6r^hh0w#k6cosd81x#-1@zl9'
+export django_KEY_2='s_*(6+bk@nv%yehh-6=n6&g%5x^vwk6*83$-b8r@kv)k%$nvp8'
 
 # kawung mount with sshfs
 kawung-mount() {
@@ -184,7 +183,7 @@ set -o vi
 
 # fzf plugin settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -type f 2> /dev/null'
+export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -not -ipath "*__pycache__*" -type f 2> /dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -type d 2> /dev/null'
 
