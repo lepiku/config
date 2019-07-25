@@ -9,5 +9,5 @@ map <Leader><F5> :w<CR>:!javac -d javabin '%' && clear && cd javabin && java '%:
 map <Leader>pr oSystem.out.println();<Esc>hi
 vmap <Leader>pr yoSystem.out.println(<Esc>pA;<Esc>
 map <Leader>main ipublic static void main(String[] args) {<CR>
-map <Leader>cls ipublic class<Esc>:put=expand('%:r')<CR>kJA {<CR>
-map <Leader>class ipublic class<Esc>:put=expand('%:r')<CR>kJA {<CR>public static void main(String[] args) {<CR>
+map <Leader>cls ipublic class<Esc>:put=expand('%:t:r')<CR>kJA {<CR>
+map <Leader>class ipublic class<Esc>:put=expand('%:t:r')<CR>kJA {<CR>public static void main(String[] args) {<CR>
