@@ -1,14 +1,14 @@
 " enable plugins and autoindent
 filetype plugin indent on
 set nocompatible
-set autoindent
 set encoding=utf-8
+set hidden
 
 " enable syntax highlighting
 syntax enable
 
 " set defautl tabs to have 4 spaces
-set sw=4 ts=4 sts=4 noexpandtab
+set sw=4 ts=4 sts=4 noexpandtab autoindent
 
 " show the matching part of the pair for [] {} and ()
 set showmatch
@@ -200,12 +200,19 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>gd :Gdiff<CR>
 
 " ------------ Config for filetypes -------------- "
+" pandoc , markdown
+command! -nargs=* RunSilent
+      \ | execute ':silent !'.'<args>'
+	  \ | execute ':redraw!'
+nmap <Leader>pp :RunSilent pandoc -o /tmp/vim-pandoc-out.pdf "%"<CR>
+nmap <Leader>pe :RunSilent evince /tmp/vim-pandoc-out.pdf<CR>
+
 augroup extension
-au!
+	au!
 	" python force indentation
 	autocmd BufRead,BufNewFile *.py setlocal sw=4 ts=4 sts=4 expandtab
 	" html,jss force indentation
-	autocmd BufRead,BufNewFile *.html,*.js,*.jsx setlocal sw=2 ts=2 sts=2 expandtab
+	autocmd BufRead,BufNewFile *.html,*.css,*.js,*.jsx setlocal sw=2 ts=2 sts=2 expandtab
 augroup end
 
 augroup postWrite
