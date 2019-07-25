@@ -32,3 +32,15 @@ alias deactivate='conda deactivate'
 
 # vim without YouCompleteMe with vi
 alias vi="vim --cmd \"let g:pathogen_disabled = ['YouCompleteMe']\""
+
+# search inside files
+alias search="grep -Rn . -e"
+alias isearch="grep -Rni . -e"
+
+# django development
+alias praktekiin="cd ~/Dropbox/Django/praktekiin/; conda deactivate; conda activate django"
+alias siput="cd ~/Projects/it-force/alkhwarizmi/; conda deactivate; conda activate it-force"
+alias tplatform="cd ~/Projects/TPF/form/; conda deactivate; conda activate tpf"
+
+# django misc
+alias dbreset='rm db.sqlite3; rm antri/migrations/0*; ./manage.py makemigrations && ./manage.py migrate && ./manage.py shell < testdata.py'
