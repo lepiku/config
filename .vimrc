@@ -92,13 +92,20 @@ highlight Visual ctermbg=18
 
 " ------------ Plugin Settings ------------------- "
 " ALE plugin settings
-"let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 let g:ale_linters = {
 			\ 'javascript': ['eslint'],
 			\}
 let g:ale_fixers = {
 			\ 'javascript': ['prettier', 'eslint'],
 			\}
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
+
+" YouCompleteMe settings with django
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_confirm_extra_conf = 0 " disable asking extra conf everytime
 
 " pathogen.vim plugin
 execute pathogen#infect()
@@ -128,7 +135,7 @@ highlight DiffText		cterm=NONE ctermbg=52
 set rtp+=~/.fzf
 
 " ale plugin
-let g:ale_sign_column_always = 1
+let g:ale_set_signs = 0
 highlight error ctermbg=88
 highlight SpellBad ctermbg=88
 highlight todo ctermbg=100
