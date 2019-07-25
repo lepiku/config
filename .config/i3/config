@@ -59,8 +59,8 @@ bindsym $mod+Shift+p mode $mode_power
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
 	colors {
-		background #222222
-		separator #222222
+		background #18181a
+		separator #18181a
 	}
 	position top
 	status_command i3status
@@ -110,10 +110,10 @@ bindsym $mod+Mod1+Shift+l gaps outer current plus 4
 bindsym $mod+Mod1+Shift+0 gaps inner current set 0; gaps outer current set 0
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+1 workspace 1: work
+bindsym $mod+2 workspace 2: server
+bindsym $mod+3 workspace 3: browser
+bindsym $mod+4 workspace 4: shell
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -122,10 +122,10 @@ bindsym $mod+9 workspace 9: media
 bindsym $mod+0 workspace 10: config
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+1 move container to workspace 1: work
+bindsym $mod+Shift+2 move container to workspace 2: server
+bindsym $mod+Shift+3 move container to workspace 3: browser
+bindsym $mod+Shift+4 move container to workspace 4: shell
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -201,7 +201,7 @@ exec --no-startup-id syndaemon -d -k -t -i 0.8 -m 100 # disable touchpad when us
 exec --no-startup-id xset r rate 400				# hold key repeat rate
 exec --no-startup-id synclient ClickFinger3=2		# tap 3 fingers on touchpad for middleclick
 exec --no-startup-id synclient TapButton3=2			# same as above
-exec --no-startup-id /home/dimas/bash/LightsOn.sh 300 # disable lock screen when fullscreen
+exec --no-startup-id ~/bin/LightsOn.bash 300		# disable lock screen when fullscreen
 exec --no-startup-id ~/.fehbg						# add wallpaper
 exec --no-startup-id redshift-gtk					# reduces blue light
 exec --no-startup-id xfce4-power-manager			# battery manager
