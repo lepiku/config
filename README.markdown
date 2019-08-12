@@ -11,6 +11,7 @@ I put my dotfiles on Github so when someone asks for my files, I can just share 
 * [vim](https://github.com/vim/vim) - An awesome text editor
 
 ## Vim Plugins
+* [Vundle.vim](https://github.com/VundleVim/Vundle.vim) - The Plug-in manager for Vim
 * [NERDTree](https://github.com/scrooloose/nerdtree) - A tree explorer plugin
 * [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git) - git integration with NERDTree
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Shows git diff

@@ -33,7 +33,6 @@ Plugin 'tomasiser/vim-code-dark'
 call vundle#end()            " required
 " enable plugins and autoindent
 filetype plugin indent on
-set nocompatible
 set encoding=utf-8
 set hidden
 
@@ -128,11 +127,13 @@ highlight Visual ctermbg=18
 let g:ale_completion_enabled = 1
 let g:ale_linters = {
 			\ 'javascript': ['eslint'],
+			\ 'python': ['pylint'],
 			\}
 let g:ale_fixers = {
 			\ 'javascript': ['prettier', 'eslint'],
+			\ 'python': ['isort', 'autopep8'],
 			\}
-let g:ale_python_pylint_options = '--load-plugins pylint_django'
+let g:ale_python_pylint_options = '--load-plugins pylint_django -d missing-docstring'
 
 " YouCompleteMe settings with django
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
@@ -172,16 +173,19 @@ highlight todo ctermbg=100
 highlight SpellCap ctermbg=100
 
 " airline plugin
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_symbols = {'space': ' ', 'paste': 'PASTE', 'maxlinenr': '',
-			\ 'notexists': 'Ɇ', 'crypt': '🔒', 'linenr': '', 'readonly': '',
-			\ 'spell': 'SPELL', 'modified': '+', 'keymap': 'Keymap: ',
-			\ 'ellipsis': '...', 'branch': '', 'whitespace': '☲'}
 
 " NERDTree ignore
 let NERDTreeIgnore = ['\.pyc$', '\.class']
@@ -235,6 +239,9 @@ map <Esc><Esc> :nohlsearch<CR>
 " vim fugitive
 map <Leader>gs :Gstatus<CR>
 map <Leader>gd :Gdiff<CR>
+
+" YouCompleteMe
+map <Leader>gt :YcmCompleter GoTo<CR>
 
 " ------------ Config for filetypes -------------- "
 " pandoc , markdown

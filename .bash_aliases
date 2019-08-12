@@ -19,7 +19,7 @@ alias rifle='python3 /home/dimas/Programs/ranger/ranger/ext/rifle.py'
 alias dlyoutube="youtube-dl -f 'bestvideo[height<=1080]+bestaudio[ext=m4a]/best' --merge-output-format mp4"
 
 # open vimrc on .vim
-alias vimrc='cd ~/.vim; vim ~/.vimrc'
+alias vimrc='vim ~/.vimrc'
 
 # git pull in all directory
 alias gitpullall='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
@@ -39,7 +39,7 @@ alias isearch="grep -Rni . -e"
 
 # django development
 alias praktekiin="cd ~/Dropbox/Django/praktekiin/; conda deactivate; conda activate django"
-alias siput="cd ~/Projects/it-force/alkhwarizmi/; conda deactivate; conda activate it-force"
+alias alkhawarizmi="cd ~/Projects/it-force/alkhwarizmi/; conda deactivate; conda activate it-force"
 alias tplatform="cd ~/Projects/TPF/form/; conda deactivate; conda activate tpf"
 
 # django misc
