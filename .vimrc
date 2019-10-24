@@ -29,6 +29,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'alvan/vim-closetag'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -94,6 +96,8 @@ set incsearch
 " tell vim where to put swap files
 set dir=~/.swapdir
 
+" italic fonts in urxvt
+set term=rxvt-unicode-256color
 set conceallevel=2
 
 " ------------ Highlight/Color/Theme ------------- "
@@ -241,7 +245,7 @@ nnoremap <Leader>rr :source ~/.vimrc<CR>
 map <Esc><Esc> :nohlsearch<CR>
 
 " vim fugitive
-map <Leader>gs :Gstatus<CR>
+map <Leader>gs :G<CR>
 map <Leader>gd :Gdiff<CR>
 
 " YouCompleteMe

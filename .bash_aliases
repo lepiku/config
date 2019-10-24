@@ -41,7 +41,7 @@ alias isearch="grep -Rni . -e"
 alias praktekiin="cd ~/Dropbox/Django/praktekiin/; conda deactivate; conda activate django"
 alias alkhawarizmi="cd ~/Projects/it-force/alkhwarizmi/; conda deactivate; conda activate it-force"
 alias tplatform="cd ~/Projects/TPF/form/; conda deactivate; conda activate tpf"
-alias ppw="cd ~/Projects/PPW/story1/; conda deactivate; conda activate ppw"
+alias ppw="cd ~/Projects/PPW/ppw-lab/; conda deactivate; conda activate ppw"
 
 # django misc
 alias dbreset='rm db.sqlite3; rm antri/migrations/0*; ./manage.py makemigrations && ./manage.py migrate && ./manage.py shell < testdata.py'
