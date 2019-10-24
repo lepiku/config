@@ -168,11 +168,14 @@ app_is_running () {
 }
 
 delay_screensaver () {
+    : ' # this part creates error, so I commented it
+
     if [[ $screensaver = kscreensaver ]]; then
-		qdbus org.freedesktop.ScreenSaver /ScreenSaver SimulateUserActivity > /dev/null
+        qdbus org.freedesktop.ScreenSaver /ScreenSaver SimulateUserActivity > /dev/null
     else
-		xscreensaver-command -deactivate > /dev/null
+        xscreensaver-command -deactivate > /dev/null
     fi
+    '
 
     if xset -q | grep -q 'DPMS is Enabled'; then
         # reset (deactivate and reactivate) DPMS status:

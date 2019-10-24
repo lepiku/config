@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar ~/Programs/TLauncher-2.66.jar

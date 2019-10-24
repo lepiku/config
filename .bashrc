@@ -183,9 +183,22 @@ set -o vi
 
 # fzf plugin settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -not -ipath "*__pycache__*" -type f 2> /dev/null'
+export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -not -path "*/compfest/*" -not -path "*__pycache__/*" -type f 2> /dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-export FZF_ALT_C_COMMAND='find * -maxdepth 6 -not -ipath "*compfest*" -type d 2> /dev/null'
+export FZF_ALT_C_COMMAND='find * -maxdepth 6 -not -path "*/compfest/*" -type d 2> /dev/null'
 
 # show only 2 folder in bash
 export PROMPT_DIRTRIM=2
+
+# colored less
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;34m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[0;1;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"

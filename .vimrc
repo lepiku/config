@@ -28,6 +28,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'alvan/vim-closetag'
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,6 +93,9 @@ set incsearch
 
 " tell vim where to put swap files
 set dir=~/.swapdir
+
+set conceallevel=2
+
 " ------------ Highlight/Color/Theme ------------- "
 colorscheme default
 set background=dark
