@@ -198,7 +198,7 @@ bindsym $mod+Print		exec --no-startup-id "sleep 1; scrot -s -e 'mv $f ~/Pictures
 # ---------- Autostart Programs ---------- #
 exec --no-startup-id nm-applet						# wifi menu in the corner
 exec --no-startup-id syndaemon -d -k -t -i 0.8 -m 100 # disable touchpad when using keyboard
-exec --no-startup-id xset r rate 400				# hold key repeat rate
+exec --no-startup-id xset r rate 300 32				# hold key repeat rate
 exec --no-startup-id synclient ClickFinger3=2		# tap 3 fingers on touchpad for middleclick
 exec --no-startup-id synclient TapButton3=2			# same as above
 exec --no-startup-id ~/bin/LightsOn.bash 300		# disable lock screen when fullscreen

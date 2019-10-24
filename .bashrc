@@ -110,6 +110,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+# put keys in a secure place
+if [ -f ~/.keys ]; then
+    . ~/.keys
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -152,10 +156,6 @@ rename() {
         mv "$s" "${s/$1/$2}"
     done
 }
-
-# django key
-export django_KEY_1='7Z!2ff)&+=-wf9=kc^+po$c1#)a6r^hh0w#k6cosd81x#-1@zl9'
-export django_KEY_2='s_*(6+bk@nv%yehh-6=n6&g%5x^vwk6*83$-b8r@kv)k%$nvp8'
 
 # kawung mount with sshfs
 kawung-mount() {

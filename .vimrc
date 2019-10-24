@@ -30,7 +30,6 @@ Plugin 'alvan/vim-closetag'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
