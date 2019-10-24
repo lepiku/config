@@ -2,8 +2,8 @@ set sw=4 ts=4 sts=4 noexpandtab
 
 " run java with F5, don't forget to 'cd' to the file folder directory
 map <F4> :w<CR>:!if [ -d javabin ]; then javac -d javabin *.java; else echo "directory 'javabin' not found"; fi<CR>
-map <F5> :w<CR>:!if [ -d javabin ]; then javac -d javabin '%' && clear && cd javabin && java '%:r'; else echo "directory 'javabin' not found"; fi<CR>
-map <Leader><F5> :w<CR>:!javac -d javabin '%' && clear && cd javabin && java '%:r' 
+map <F5> :w<CR>:!if [ -d javabin ]; then javac -d javabin '%' && cd javabin && java '%:r'; else echo "directory 'javabin' not found"; fi<CR>
+map <Leader><F5> :w<CR>:!javac -d javabin '%' && cd javabin && java '%:r' 
 
 " shortcuts
 map <Leader>pr oSystem.out.println();<Esc>hi

@@ -51,14 +51,6 @@ set showmatch
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
 
-"" enable statusline (disabled because vim-airline)
-"set laststatus=2
-"" show file full path in statusline
-"set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-"" change statusline color
-"hi StatusLine	ctermbg=0	ctermfg=250
-"hi StatusLineNC	ctermbg=15	ctermfg=240
-
 " add border at 80 column
 set colorcolumn=80
 
@@ -110,17 +102,13 @@ highlight SignColumn ctermbg=NONE
 highlight colorcolumn ctermbg=235
 
 " hybrid line number
-highlight LineNR ctermfg=yellow
-highlight CursorLineNR ctermfg=214
+highlight CursorLineNR cterm=NONE ctermfg=214
 
 " vertical split
-highlight VertSplit ctermfg=0 ctermbg=123
+highlight VertSplit cterm=NONE ctermfg=123
 
 " comment color
 highlight Comment ctermfg=248
-
-" vim-code-dark
-"colorscheme codedark
 
 " YouCompleteMe highlights
 highlight Pmenu ctermbg=236 ctermfg=254
@@ -132,7 +120,6 @@ highlight Visual ctermbg=18
 
 " ------------ Plugin Settings ------------------- "
 " ALE plugin settings
-let g:ale_completion_enabled = 1
 let g:ale_linters = {
 			\ 'javascript': ['eslint'],
 			\ 'python': ['pylint'],
@@ -198,6 +185,11 @@ let g:airline#extensions#tabline#enabled = 1
 " NERDTree ignore
 let NERDTreeIgnore = ['\.pyc$', '\.class']
 
+" ycm blacklist
+let g:ycm_filetype_blacklist = {
+			\ 'markdown': 1,
+			\}
+
 " ------------ Mapping / Remaped keys ------------ "
 " change leader key
 let mapleader=","
@@ -261,10 +253,12 @@ nmap <Leader>pe :RunSilent evince /tmp/vim-pandoc-out.pdf<CR>
 
 augroup extension
 	au!
-	" python force indentation
+	" force indentation
 	autocmd BufRead,BufNewFile *.py setlocal sw=4 ts=4 sts=4 expandtab
-	" html,jss force indentation
 	autocmd BufRead,BufNewFile *.html,*.css,*.js,*.jsx setlocal sw=2 ts=2 sts=2 expandtab
+	autocmd BufRead,BufNewFile *.md setlocal sw=2 ts=2 sts=2 expandtab
+	" force javascriptreact to javascript
+	autocmd BufRead,BufNewFile *.jsx,*js setlocal filetype=javascript
 augroup end
 
 augroup postWrite

@@ -27,9 +27,6 @@ alias gitpullall='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} 
 # fzf hidden search
 alias fzfall='find -maxdepth 6 -not -ipath "*compfest*" -type d 2> /dev/null | fzf'
 
-# deactivate source
-alias deactivate='conda deactivate'
-
 # vim without YouCompleteMe with vi
 alias vi="vim --cmd \"let g:pathogen_disabled = ['YouCompleteMe']\""
 
@@ -42,9 +39,12 @@ alias praktekiin="cd ~/Dropbox/Django/praktekiin/; conda deactivate; conda activ
 alias alkhawarizmi="cd ~/Projects/it-force/alkhwarizmi/; conda deactivate; conda activate it-force"
 alias tplatform="cd ~/Projects/TPF/form/; conda deactivate; conda activate tpf"
 alias ppw="cd ~/Projects/PPW/ppw-lab/; conda deactivate; conda activate ppw"
+alias matchadrink="cd ~/Projects/PPW/matcha-drink/; conda deactivate; conda activate ppw"
 
 # django misc
 alias dbreset='rm db.sqlite3; rm antri/migrations/0*; ./manage.py makemigrations && ./manage.py migrate && ./manage.py shell < testdata.py'
 
 # compfest
 alias blackmanta="cd ~/Projects/compfest/black-manta"
+
+alias iftop="iftop -B -m 15M"
