@@ -25,4 +25,4 @@ I put my dotfiles on Github so when someone asks for my files, I can just share 
 * [auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
 * [closetag.vim](https://github.com/alvan/vim-closetag) - Auto close HTML tags
 * [vim-code-dark](https://github.com/tomasiser/vim-code-dark) - VSCode-like theme for vim
-
+* [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Real-time markdown preview in vim

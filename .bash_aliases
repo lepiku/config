@@ -31,8 +31,8 @@ alias fzfall='find -maxdepth 6 -not -ipath "*compfest*" -type d 2> /dev/null | f
 alias vi="vim --cmd \"let g:pathogen_disabled = ['YouCompleteMe']\""
 
 # search inside files
-alias search="grep -Rn . -e"
-alias isearch="grep -Rni . -e"
+alias search="grep -Rn -e"
+alias isearch="grep -Rni -e"
 
 # django development
 alias praktekiin="cd ~/Dropbox/Django/praktekiin/; conda deactivate; conda activate django"
@@ -48,3 +48,4 @@ alias dbreset='rm db.sqlite3; rm antri/migrations/0*; ./manage.py makemigrations
 alias blackmanta="cd ~/Projects/compfest/black-manta"
 
 alias iftop="iftop -B -m 15M"
+alias git-commit-no-message="git commit --allow-empty-message -m ''"

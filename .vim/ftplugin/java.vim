@@ -1,4 +1,4 @@
-set sw=4 ts=4 sts=4 noexpandtab
+set sw=4 ts=4 sts=4 expandtab
 
 " run java with F5, don't forget to 'cd' to the file folder directory
 map <F4> :w<CR>:!if [ -d javabin ]; then javac -d javabin *.java; else echo "directory 'javabin' not found"; fi<CR>

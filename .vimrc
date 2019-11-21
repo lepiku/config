@@ -184,10 +184,8 @@ let g:airline#extensions#tabline#enabled = 1
 " NERDTree ignore
 let NERDTreeIgnore = ['\.pyc$', '\.class']
 
-" ycm blacklist
-let g:ycm_filetype_blacklist = {
-			\ 'markdown': 1,
-			\}
+set undofile
+set undodir=~/.undodir
 
 " ------------ Mapping / Remaped keys ------------ "
 " change leader key
