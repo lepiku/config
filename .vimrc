@@ -215,7 +215,7 @@ noremap <C-Up>		:resize -1<CR>
 noremap <C-Right>	:vertical:resize +1<CR>
 
 " FZF
-noremap <C-z> :FZF<CR>
+noremap <C-z> :call fzf#run(fzf#wrap({'source': '$FZF_VIM_COMMAND'}))<CR>
 
 " NERDTree plugin
 noremap <Leader>n :NERDTreeToggle<CR>

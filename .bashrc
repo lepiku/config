@@ -182,11 +182,12 @@ stty -ixon
 set -o vi
 
 # fzf plugin settings
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='find * -maxdepth 6 -not -path "compfest/*" -not -path "*/__pycache__/*" -not -path "staticfiles/*" -type f 2> /dev/null'
+export FZF_DEFAULT_COMMAND='fd --type f -I --hidden --follow --max-depth 5'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-export FZF_ALT_C_COMMAND='find * -maxdepth 6 -not -path "compfest/*" -not -path "*/__pycache__/*" -not -path "staticfiles/*" -type d 2> /dev/null'
+export FZF_ALT_C_COMMAND='fd --type d -I --hidden --follow --max-depth 5'
 export FZF_DEFAULT_OPTS='--height 40%'
+export FZF_VIM_COMMAND='fd --type f --hidden --follow --exclude .git'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # show only 2 folder in bash
 export PROMPT_DIRTRIM=2
